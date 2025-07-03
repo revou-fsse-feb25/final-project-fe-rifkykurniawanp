@@ -1,13 +1,13 @@
-// app/cart/page.tsx
+
 "use client";
 
 import React from "react";
 import { useCart } from "@/hooks/useCart";
 import Image from "next/image";
+import Link from "next/link"; // Pastikan Link sudah diimpor
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
-import Link from "next/link";
 
 const CartPage = () => {
   const {
@@ -16,14 +16,14 @@ const CartPage = () => {
     removeFromCart,
     clearCart,
     total,
-    itemCount
+    itemCount,
   } = useCart();
 
   if (cart.length === 0) {
     return (
       <div className="p-8 text-center">
         <h1 className="text-2xl font-bold mb-4">Keranjang Anda Kosong</h1>
-        <Link href="/products">
+        <Link href="/product">
           <Button variant="outline">Kembali ke Produk</Button>
         </Link>
       </div>
@@ -43,8 +43,16 @@ const CartPage = () => {
             className="rounded-md object-cover"
           />
           <CardContent className="flex-1 p-4 space-y-2">
-            <h2 className="text-lg font-semibold">{product.name}</h2>
-            <p className="text-sm text-gray-600">{product.description}</p>
+            
+            {/* --- PERUBAHAN DI SINI --- */}
+            <Link href={`/products/${product.slug}`} legacyBehavior>
+              <a className="hover:underline">
+                <h2 className="text-lg font-semibold">{product.name}</h2>
+              </a>
+            </Link>
+            {/* ------------------------- */}
+            
+            <p className="text-sm text-gray-600">{product.description}</p> {/* Deskripsi bisa opsional */}
             <p className="text-primary font-bold">{formatCurrency(product.price)}</p>
             <div className="flex items-center gap-2">
               <Button
@@ -86,9 +94,7 @@ const CartPage = () => {
           <Button variant="outline" onClick={clearCart}>
             Hapus Semua
           </Button>
-          <Button>
-            Checkout
-          </Button>
+          <Button>Checkout</Button>
         </div>
       </div>
     </div>

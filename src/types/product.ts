@@ -35,7 +35,15 @@ export interface FilterState {
   origin: string[];
 }
 
+export interface CartProduct {
+  id: string;
+  name: string;
+  price: number;
+  image: string; 
+  slug: string;
+}
+
 export interface CartItem {
-  product: Product;
+  product: CartProduct;
   quantity: number;
 }

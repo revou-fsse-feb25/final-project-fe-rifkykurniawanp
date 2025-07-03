@@ -1,7 +1,6 @@
 // data/products.ts
 import { Product } from '@/types/product';
 
-// Bahan Teh
 export const teaIngredients: Product[] = [
   {
     id: 'tea-001',
@@ -56,7 +55,6 @@ export const teaIngredients: Product[] = [
   }
 ];
 
-// Alat Teh
 export const teaTools: Product[] = [
   {
     id: 'tea-tool-001',
@@ -87,7 +85,6 @@ export const teaTools: Product[] = [
   }
 ];
 
-// Bahan Kopi
 export const coffeeIngredients: Product[] = [
   {
     id: 'coffee-001',
@@ -145,7 +142,6 @@ export const coffeeIngredients: Product[] = [
   }
 ];
 
-// Alat Kopi
 export const coffeeTools: Product[] = [
   {
     id: 'coffee-tool-001',
@@ -190,7 +186,6 @@ export const coffeeTools: Product[] = [
   }
 ];
 
-// Bahan Herbal
 export const herbalIngredients: Product[] = [
   {
     id: 'herbal-001',
@@ -245,7 +240,6 @@ export const herbalIngredients: Product[] = [
   }
 ];
 
-// Alat Herbal
 export const herbalTools: Product[] = [
   {
     id: 'herbal-tool-001',
@@ -275,7 +269,6 @@ export const herbalTools: Product[] = [
   }
 ];
 
-// Alat Penunjang
 export const supportTools: Product[] = [
   {
     id: 'support-001',
@@ -318,7 +311,6 @@ export const supportTools: Product[] = [
   }
 ];
 
-// Bahan Penunjang
 export const supportIngredients: Product[] = [
   {
     id: 'support-ing-001',
@@ -364,7 +356,6 @@ export const supportIngredients: Product[] = [
   }
 ];
 
-// Combine all products
 export const allProducts: Product[] = [
   ...teaIngredients,
   ...teaTools,

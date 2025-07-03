@@ -1,4 +1,7 @@
 
+import { VariantProps } from "class-variance-authority";
+import { buttonVariants } from "../components/ui/button";
+
 export interface User {
   id: string;
   name: string;

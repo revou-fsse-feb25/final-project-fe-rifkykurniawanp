@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { NotificationPopover } from '../header/NotificationPopUp';
 import { ProfileDropdown } from '@/components/layout/header/profiledropdown';
-import type { HeaderProps } from '@/types/interface';
+import type { HeaderProps } from '@/types/dashboard';
 
 type HeaderActionsProps = Pick<
   HeaderProps,
