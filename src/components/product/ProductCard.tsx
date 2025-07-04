@@ -36,7 +36,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart, bu
 
   return (
     <Card className="overflow-hidden shadow-md transition-shadow hover:shadow-lg flex flex-col">
-      {/* --- UBAH DI SINI --- */}
       <Link href={`/products/${product.slug}`} aria-label={`Lihat detail untuk ${product.name}`}>
         <div className="relative w-full h-48">
           <Image 
@@ -51,7 +50,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart, bu
       
       <CardHeader>
         <CardTitle className="truncate">
-          {/* --- UBAH DI SINI JUGA --- */}
           <Link href={`/products/${product.slug}`} className="hover:underline">
             {product.name}
           </Link>

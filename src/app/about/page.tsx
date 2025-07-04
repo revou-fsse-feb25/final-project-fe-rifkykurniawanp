@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Users, BookOpen, ShoppingBag, Star, Zap, Globe, TrendingUp, Play, CheckCircle, ArrowRight } from 'lucide-react';
 import { cva, type VariantProps } from "class-variance-authority";
-import { ButtonProps, CardProps, TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps, AnimatedSectionProps, TeamMember, Feature, Stat } from "@/types/dashboard";
+import { ButtonProps, CardProps, TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps, AnimatedSectionProps, TeamMember, Feature, Stat } from "@/types/about";
 // Utility for merging Tailwind classes
 const cn = (...inputs: (string | undefined | null | boolean)[]): string => {
     // A simplified version of the 'cn' utility for this self-contained component

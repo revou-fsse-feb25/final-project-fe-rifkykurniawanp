@@ -16,6 +16,7 @@ export interface Product {
   roastLevel?: 'light' | 'medium' | 'dark';
   brewingMethod?: string[];
   caffeine?: 'none' | 'low' | 'medium' | 'high';
+  slug: string;
 }
 
 export interface ProductCategory {

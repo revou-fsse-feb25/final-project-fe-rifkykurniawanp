@@ -1,90 +1,58 @@
-
-import { VariantProps } from "class-variance-authority";
-import { buttonVariants } from "../components/ui/button";
+export interface StatCardProps {
+  title: string;
+  icon: React.ComponentType<any>;
+  value: string | number;
+  description: string;
+}
 
 export interface User {
-  id: string;
+  id: number;
   name: string;
   email: string;
-  avatar?: string;
-  role: 'student' | 'suplier' | 'buyer' | 'instructor' | 'admin';
+  revenue?: number;
 }
 
-export interface CartItem {
-  id: string;
+export interface Course {
+  id: number;
   title: string;
+  instructor: string;
+  students: number;
+  progress?: number;
+}
+
+export interface Product {
+  id: number;
+  name: string;
+  supplier: string;
   price: number;
-  quantity: number;
+  stock: number;
 }
 
-export interface Notification {
-  id: string;
+export interface SalesData {
+  name: string;
+  courses: number;
+  products: number;
+}
+
+export interface ChartCardProps {
   title: string;
-  message: string;
-  time: string;
-  read: boolean;
-  type: 'info' | 'success' | 'warning' | 'error';
-}
-
-// Anda juga bisa menambahkan tipe props di sini jika akan digunakan di banyak tempat
-export interface HeaderProps {
-  currentUser?: User;
-  cartItems?: CartItem[];
-  notifications?: Notification[];
-  onSearch?: (query: string) => void;
-  onCartClick?: () => void;
-  onProfileClick?: () => void;
-  onLogin?: () => void;
-  onLogout?: () => void;
-  onNotificationRead?: (notificationId: string) => void;
+  description: string;
+  children: React.ReactNode;
   className?: string;
 }
 
-
-// Interface untuk komponen yang digunakan di about page
-export interface TeamMember {
-    name: string;
-    role: string;
-    specialty: string;
-    imageUrl: string;
-    stats: string;
+export interface CrudTableProps<T> {
+  title: string;
+  data: T[];
+  columns: Array<{ Header: string; accessor: keyof T }>;
+  onAdd?: () => void;
+  onEdit?: (item: T) => void;
+  onDelete?: (item: T) => void;
 }
 
-export interface Feature {
-    icon: React.ReactNode;
-    title: string;
-    description: string;
-}
-
-export interface Stat {
-    number: string;
-    label: string;
-    icon: React.ReactNode;
-}
-
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
-    variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
-    size?: 'default' | 'sm' | 'lg' | 'icon';
-}
-
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export interface TabsProps {
-    children: React.ReactNode;
-}
-
-export interface TabsListProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    isActive?: boolean;
-}
-
-export interface TabsContentProps {
-    children: React.ReactNode;
-    isActive: boolean;
-}
-
-export interface AnimatedSectionProps {
-    children: React.ReactNode;
-    id: string;
+export interface DashboardView {
+  id: string;
+  label: string;
+  icon: React.ComponentType<any>;
+  component: React.ComponentType;
 }
