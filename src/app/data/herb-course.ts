@@ -1,198 +1,205 @@
-import { Course, Module, Lesson } from '@/types/course'
-
-const herbalLessons: { [moduleId: string]: Lesson[] } = {
-  'herbal-intro': [
-    {
-      id: 'herbal-1',
-      title: 'Introduction to Herbal Medicine',
-      description: 'Learn the foundations and philosophy behind herbal medicine across cultures.',
-      duration: '15 min',
-      completed: false,
-      type: 'video',
-      videoUrl: 'https://example.com/herbal-intro',
-      content: 'Herbal medicine has been used for thousands of years as a natural healing approach...',
-      bookmarked: false,
-      notes: ''
-    },
-    {
-      id: 'herbal-2',
-      title: 'Common Medicinal Herbs',
-      description: 'Explore the most commonly used herbs and their therapeutic benefits.',
-      duration: '20 min',
-      completed: false,
-      type: 'reading',
-      content: 'Chamomile, peppermint, turmeric, and ginger are examples of widely used medicinal herbs...',
-      bookmarked: false,
-      notes: ''
-    },
-    {
-      id: 'herbal-3',
-      title: 'Safety and Contraindications',
-      description: 'Understand the potential risks, side effects, and interactions of herbal products.',
-      duration: '20 min',
-      completed: false,
-      type: 'video',
-      videoUrl: 'https://example.com/herbal-safety',
-      content: 'Even natural remedies can have interactions with medications or cause side effects...',
-      bookmarked: false,
-      notes: ''
-    }
-  ],
-  'herbal-preparation': [
-    {
-      id: 'herbal-4',
-      title: 'Making Herbal Teas and Infusions',
-      description: 'Learn how to prepare herbal remedies using infusions and decoctions.',
-      duration: '25 min',
-      completed: false,
-      type: 'practice',
-      content: 'To prepare an infusion, pour hot water over dried herbs and steep...',
-      bookmarked: false,
-      notes: ''
-    },
-    {
-      id: 'herbal-5',
-      title: 'Tinctures and Extracts',
-      description: 'Hands-on methods to create concentrated herbal formulas.',
-      duration: '30 min',
-      completed: false,
-      type: 'reading',
-      content: 'Tinctures are alcohol-based extracts offering a longer shelf life...',
-      bookmarked: false,
-      notes: ''
-    },
-    {
-      id: 'herbal-6',
-      title: 'Herbal Preparation Assessment',
-      description: 'Evaluate your understanding of herbal preparation techniques.',
-      duration: '30 min',
-      completed: false,
-      type: 'quiz',
-      questions: [
-        {
-          id: 'q1',
-          question: 'What is the typical solvent used in tincture preparation?',
-          options: ['Water', 'Alcohol', 'Glycerin', 'Vinegar'],
-          correctAnswer: 1,
-          explanation: 'Alcohol is the most common solvent for tinctures due to its extraction efficiency.'
-        },
-        {
-          id: 'q2',
-          question: 'Which method is used for tough plant materials like roots?',
-          options: ['Infusion', 'Decoction', 'Fermentation', 'Distillation'],
-          correctAnswer: 1,
-          explanation: 'Decoction is ideal for harder plant parts like roots or bark.'
-        }
-      ],
-      bookmarked: false,
-      notes: ''
-    }
-  ],
-  'clinical-herbalism': [
-    {
-      id: 'herbal-7',
-      title: 'Herbal Remedies for Digestive Health',
-      description: 'Explore herbs beneficial for common digestive complaints.',
-      duration: '25 min',
-      completed: false,
-      type: 'video',
-      videoUrl: 'https://example.com/herbal-digestive',
-      content: 'Peppermint, ginger, and fennel are commonly used for bloating, nausea, and IBS...',
-      bookmarked: false,
-      notes: ''
-    },
-    {
-      id: 'herbal-8',
-      title: 'Herbs for Immune Support',
-      description: 'Understand adaptogens and immunomodulators like echinacea and elderberry.',
-      duration: '25 min',
-      completed: false,
-      type: 'reading',
-      content: 'Adaptogenic herbs help the body adapt to stress and support immunity...',
-      bookmarked: false,
-      notes: ''
-    },
-    {
-      id: 'herbal-9',
-      title: 'Case Study: Designing Herbal Protocols',
-      description: 'Apply herbal knowledge in a practical clinical-style case scenario.',
-      duration: '30 min',
-      completed: false,
-      type: 'practice',
-      content: 'Based on the case of a patient with chronic fatigue, suggest an herbal support protocol...',
-      bookmarked: false,
-      notes: ''
-    }
-  ]
-}
-
-const herbalModules: Module[] = [
-  {
-    id: 'herbal-intro',
-    title: 'Foundations of Herbalism',
-    description: 'Understand the history, philosophy, and safety of herbal medicine.',
-    duration: '55 min',
-    difficulty: 'Easy',
-    lessons: herbalLessons['herbal-intro']
-  },
-  {
-    id: 'herbal-preparation',
-    title: 'Preparation Techniques',
-    description: 'Learn hands-on skills in creating herbal products.',
-    duration: '85 min',
-    difficulty: 'Medium',
-    prerequisites: ['herbal-intro'],
-    lessons: herbalLessons['herbal-preparation']
-  },
-  {
-    id: 'clinical-herbalism',
-    title: 'Applied Herbalism in Health',
-    description: 'Explore clinical use of herbs in managing common conditions.',
-    duration: '80 min',
-    difficulty: 'Hard',
-    prerequisites: ['herbal-intro', 'herbal-preparation'],
-    lessons: herbalLessons['clinical-herbalism']
-  }
-]
+import { Course } from "@/types/course";
 
 export const herbalCourse: Course = {
-  id: 'herbal-healing',
-  title: 'Herbal Healing: Traditional Wisdom in Modern Practice',
-  description: 'An evidence-informed course on the therapeutic use of herbs from preparation to clinical use.',
-  instructor: 'Dr. Maya Fern',
-  instructorBio: 'Dr. Maya Fern is a clinical herbalist and naturopath with over 20 years of experience integrating herbal medicine into modern healthcare settings.',
-  instructorAvatar: '/instructors/maya-fern.jpg',
-  rating: 4.9,
-  students: 1625,
-  duration: '5.5 hours',
-  level: 'Intermediate',
-  modules: herbalModules,
-  icon: '🌿',
-  color: 'bg-emerald-600',
-  category: 'Herbal',
-  price: 99,
-  originalPrice: 139,
-  tags: ['Herbal', 'Health', 'Botany', 'Preparation', 'Clinical'],
+  id: "herbal-healing",
+  title: "Herbal Healing & Wellness",
+  description:
+    "Discover the therapeutic properties of herbs and create your own herbal remedies and teas.",
+  instructor: "Dr. Elena Vasquez",
+  instructorBio:
+    "Dr. Elena is a certified clinical herbalist with over 10 years of experience in integrative medicine and botanical therapy.",
+  instructorAvatar: "/instructors/elena-vasquez.jpg",
+  rating: 4.7,
+  students: 892,
+  duration: "5 hours",
+  level: "Beginner",
+  modules: [
+    {
+      id: "herbal-basics",
+      title: "Introduction to Herbalism",
+      description: "Foundation knowledge of medicinal herbs.",
+      duration: "100 min",
+      difficulty: "Easy",
+      lessons: [
+        {
+          id: "herbal-1",
+          title: "History of Herbalism",
+          description:
+            "Learn the historical use of herbs across ancient civilizations.",
+          duration: "20 min",
+          completed: true,
+          type: "video",
+          videoUrl: "https://example.com/herbal-history",
+          content: "Herbalism dates back to ancient Egypt, China, and Greece...",
+          bookmarked: false,
+          notes: "",
+          completedAt: new Date("2024-01-10"),
+        },
+        {
+          id: "herbal-2",
+          title: "Safety & Contraindications",
+          description:
+            "Important safety guidelines when using medicinal herbs.",
+          duration: "25 min",
+          completed: false,
+          type: "reading",
+          content: "While herbs are natural, they can have side effects...",
+        },
+        {
+          id: "herbal-3",
+          title: "Herb Identification",
+          description: "Learn to identify common medicinal herbs.",
+          duration: "30 min",
+          completed: false,
+          type: "practice",
+          content: "Use a botanical guide to identify local herbs...",
+        },
+        {
+          id: "herbal-4",
+          title: "Harvesting & Drying",
+          description: "Techniques for harvesting and preserving herbs.",
+          duration: "25 min",
+          completed: false,
+          type: "video",
+          videoUrl: "https://example.com/herbal-harvesting",
+          content:
+            "Proper drying ensures long-term storage of herbs..."
+        },
+      ],
+    },
+    {
+      id: "herbal-properties",
+      title: "Therapeutic Properties",
+      description: "Understanding how herbs work in the body.",
+      duration: "120 min",
+      difficulty: "Medium",
+      prerequisites: ["herbal-basics"],
+      lessons: [
+        {
+          id: "herbal-5",
+          title: "Digestive Herbs",
+          description: "Support digestive health with these herbs.",
+          duration: "30 min",
+          completed: false,
+          type: "video",
+          videoUrl: "https://example.com/digestive-herbs",
+          content: "Examples include peppermint, ginger, and fennel...",
+        },
+        {
+          id: "herbal-6",
+          title: "Immune System Support",
+          description: "Herbs to strengthen your immune system.",
+          duration: "25 min",
+          completed: false,
+          type: "reading",
+          content: "Echinacea and elderberry are popular immune boosters...",
+        },
+        {
+          id: "herbal-7",
+          title: "Stress & Sleep Herbs",
+          description: "Relaxation and sleep support from plants.",
+          duration: "35 min",
+          completed: false,
+          type: "video",
+          videoUrl: "https://example.com/stress-herbs",
+          content:
+            "Chamomile, valerian, and lavender are common options...",
+        },
+        {
+          id: "herbal-8",
+          title: "Herbs for Energy",
+          description: "Boost your vitality naturally.",
+          duration: "30 min",
+          completed: false,
+          type: "practice",
+          content: "Try adaptogens like ginseng or rhodiola...",
+        },
+      ],
+    },
+    {
+      id: "herbal-preparations",
+      title: "Herbal Preparations & Recipes",
+      description: "Learn to make teas, tinctures, and remedies.",
+      duration: "180 min",
+      difficulty: "Hard",
+      prerequisites: ["herbal-basics", "herbal-properties"],
+      lessons: [
+        {
+          id: "herbal-9",
+          title: "Herbal Tea Blending",
+          description: "Make your own herbal tea blends.",
+          duration: "40 min",
+          completed: false,
+          type: "practice",
+          content: "Combine herbs based on flavor and effect...",
+        },
+        {
+          id: "herbal-10",
+          title: "Making Tinctures",
+          description: "Extract herbs into alcohol or glycerin.",
+          duration: "35 min",
+          completed: false,
+          type: "video",
+          videoUrl: "https://example.com/tincture-making",
+          content:
+            "Learn ratios, solvents, and timing for tinctures...",
+        },
+        {
+          id: "herbal-11",
+          title: "Herbal Oils & Salves",
+          description: "Create topical herbal remedies.",
+          duration: "45 min",
+          completed: false,
+          type: "practice",
+          content: "Infused oils and beeswax form the base of salves...",
+        },
+        {
+          id: "herbal-12",
+          title: "Seasonal Herbal Recipes",
+          description: "Adapt your remedies to the seasons.",
+          duration: "30 min",
+          completed: false,
+          type: "reading",
+          content: "Winter immunity blends and summer cooling teas...",
+        },
+        {
+          id: "herbal-13",
+          title: "Creating Your Herbal Garden",
+          description: "Grow your own herbal pharmacy.",
+          duration: "30 min",
+          completed: false,
+          type: "video",
+          videoUrl: "https://example.com/herbal-garden",
+          content:
+            "Best practices for planting, sun exposure, and harvesting...",
+        },
+      ],
+    },
+  ],
+  icon: "🌿",
+  color: "bg-purple-500",
+  category: "Herbal",
+  price: 79,
+  originalPrice: 109,
+  tags: ["Herbal", "Wellness", "Remedies", "Natural Medicine", "Healing"],
   whatYouWillLearn: [
-    'Understand traditional herbal concepts and their cultural roots',
-    'Prepare herbal teas, tinctures, and decoctions safely',
-    'Recognize indications and contraindications of common herbs',
-    'Apply herbal knowledge in clinical case scenarios',
-    'Promote wellness using plant-based remedies'
+    "Identify and safely use common medicinal herbs",
+    "Understand herbal actions and body systems",
+    "Create teas, tinctures, and topical salves",
+    "Build your own home herbal apothecary",
   ],
   requirements: [
-    'Interest in natural health and wellness',
-    'Basic knowledge of biology is helpful',
-    'Access to common herbs or herbal suppliers',
-    'Notebook for practical notes and case logs'
+    "Basic interest in natural remedies",
+    "Willingness to try herbal preparations at home",
+    "No prior herbal experience needed",
   ],
   targetAudience: [
-    'Health-conscious individuals',
-    'Naturopaths and herbal enthusiasts',
-    'Students of integrative or complementary medicine',
-    'Professionals in wellness, yoga, or nutrition'
+    "Beginners interested in herbal medicine",
+    "Health-conscious individuals",
+    "Wellness practitioners and coaches",
+    "Anyone seeking natural healing alternatives",
   ],
-  language: 'English',
-  lastUpdated: new Date('2024-02-10'),
-  certificate: true
-}
+  language: "English",
+  lastUpdated: new Date("2024-01-01"),
+  certificate: true,
+};

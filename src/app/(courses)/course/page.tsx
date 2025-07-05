@@ -1,17 +1,16 @@
-// ini nanti buat my course page
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Course } from "@/types/course";
-import { teaCourse } from "../data/tea-course";
-import { coffeeCourse } from "../data/coffee-course";
-import { herbalCourse } from "../data/herb-course";
-import { CourseTabs } from "@/components/course/CourseTabs";
+import { useState } from "react"
+import { Course } from "@/types/course"
+import { teaCourse } from "@/app/data/tea-course"
+import { coffeeCourse } from "@/app/data/coffee-course"
+import { herbalCourse } from "@/app/data/herb-course"
+import { CourseTabs } from "@/components/course/course-tabs"
 
-const allCourses: Course[] = [teaCourse, coffeeCourse, herbalCourse];
+const allCourses: Course[] = [teaCourse, coffeeCourse, herbalCourse]
 
 export default function CoursePage() {
-  const [selectedCourse, setSelectedCourse] = useState<Course>(allCourses[0]);
+  const [selectedCourse, setSelectedCourse] = useState<Course>(allCourses[0])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
@@ -32,5 +31,5 @@ export default function CoursePage() {
         />
       </div>
     </div>
-  );
+  )
 }

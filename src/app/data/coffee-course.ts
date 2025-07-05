@@ -13,7 +13,7 @@ export const coffeeCourse: Course = {
   students: 2156,
   duration: "8 hours",
   level: "Advanced",
-  // icon: () => ""
+  // icon: <Coffee className="w-6 h-6" />,
   color: "bg-amber-600",
   category: "Coffee",
   price: 99,
